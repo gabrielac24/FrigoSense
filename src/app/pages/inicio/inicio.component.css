@@ -1,0 +1,59 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff4f81, #ff9500);
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    nav button {
+      margin-left: 15px;
+      padding: 10px 20px;
+      background: transparent;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    nav button:hover {
+      color: #1DB954;
+    }
+
+    .content {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    h6 {
+      font-size: 24px;
+      font-weight: normal;
+      margin-bottom: 40px;
+    }
+
+    .producto {
+      background-color: #1DB954;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .producto:hover {
+      background-color: #1ed760;
+    }

@@ -1,0 +1,368 @@
+/* Estilo para los iconos */
+.fas {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fa-sun {
+  color: #f39c12 !important;
+}
+
+.fa-cloud-sun {
+  color: #f1c40f !important;
+}
+
+.fa-cloud {
+  color: #475859 !important;
+}
+
+.fa-thermometer-half {
+  color: #e74c3c !important;
+}
+
+.fa-wind {
+  color: #b0d8f3 !important;
+}
+
+.fa-rain {
+  color: #52b1f0 !important;
+}
+
+.fa-tint {
+  color: #51efba !important;
+}
+
+.fa-cloud-rain {
+  color: #5dade2 !important;
+}
+
+.fa-moon {
+  color: #8e44ad !important;
+}
+
+.fa-sun {
+  color: #e67e22 !important;
+}
+
+
+/* Efecto de rebote en el botón de búsqueda */
+.btn:hover {
+  animation: bounce 0.5s ease-in-out;
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Efecto de aparición del clima */
+#weatherInfo {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilo global */
+body {
+  background: linear-gradient(135deg, #a0c4ff, #d4e1f0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.card {
+  max-width: 420px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #3b2298, #7975eb, #c1abf9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease;
+  color: #ffffff;
+}
+/* Card (tarjeta de clima) */
+/* Fondo general */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Tarjeta principal */
+.card {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Estilo para los iconos */
+.fas {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fa-cloud-sun {
+  color: #f1c40f; /* Amarillo para el sol */
+}
+
+.fa-sun {
+  color: #e67e22; /* Naranja para el amanecer */
+}
+
+.fa-moon {
+  color: #8e44ad; /* Morado para el atardecer */
+}
+
+/* Temperatura */
+.temp {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+  margin: 15px 0;
+}
+
+/* Contenedor de información climática */
+#weatherInfo {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#weatherInfo.bg-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#weatherInfo.bg-light {
+  background-color: #ecf0f1;
+}
+
+#weatherInfo h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+/* Nueva distribución en dos columnas */
+.row {
+  margin-top: 10px;
+}
+
+.row .col-6 {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 5px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+/* Espaciado entre el icono y el texto */
+.row i {
+  margin-right: 8px;
+  font-size: 18px;
+  color: #8a34db;
+}
+
+/* Entrada de búsqueda */
+.input-group input {
+  border-radius: 5px 0 0 5px;
+}
+
+.input-group button {
+  border-radius: 0 5px 5px 0;
+}
+
+/* Estilos adicionales */
+button:hover {
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Título */
+h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+h2 i {
+  margin-right: 10px;
+}
+
+/* Input y botón */
+.input-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 2px solid #ecdff7;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #b365e7;
+}
+
+button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  color: #ffffff !important;
+  background-color: #8a34db;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #d3a7fa;
+}
+
+/* Información del clima */
+#weatherInfo {
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#weatherInfo.bg-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#weatherInfo.bg-light {
+  background-color: #ecf0f1;
+}
+
+#weatherInfo h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+/* Distribución de información en dos columnas */
+.weather-grid {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.weather-grid p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.weather-grid i {
+  margin-right: 5px;
+  color: #3498db;
+}
+
+.temp {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+  margin: 15px 0;
+}
+
+/* Estilos adicionales */
+.humidity, .precipitation, .sunrise, .sunset, .wind, .description {
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.datalist option {
+  font-size: 1rem;
+}
+
+/* Efectos visuales */
+button, input[type="text"]:focus {
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+input[type="text"]::placeholder {
+  color: #2c3e50;
+}
+
+.sunrise i {
+  color: #f1c40f;
+}
+
+.sunset i {
+  color: #8e44ad;
+}
+/* Estilo para los iconos */
+.fas {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Ícono de "Consultar Clima" con sol y nube */
+.fa-cloud-sun {
+  color: #f1c40f; /* Amarillo para el sol */
+}
+
+/* Nuevo ícono de amanecer con montañas y sol */
+.fa-mountain-sun {
+  color: #e67e22; /* Naranja amanecer */
+}
+
+/* Efecto de rebote en el botón de búsqueda */
+.btn:hover {
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
