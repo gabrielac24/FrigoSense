@@ -15,11 +15,13 @@ import { WeatherComponent } from './pages/weather/weather.component';
 import { ComparaComponent } from './pages/compara/compara.component';
 import { NutricionComponent } from './pages/nutricion/nutricion.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    InicioComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,

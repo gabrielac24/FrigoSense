@@ -15,4 +15,8 @@ export class HeaderComponent {
     // this.router.navigate(['/login'], { state: {dato: "DESARROLLO DE APLICACIONES WEB"} });
     this.router.navigate(['/login'], { state: {dato: "<h1>HOLA MUNDO</h1>"} });
   }
+  cerrarSesion() {
+    localStorage.removeItem('usuario');
+    this.router.navigate(['/login']);
+  }
 }

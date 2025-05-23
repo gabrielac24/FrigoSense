@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -7,19 +7,13 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(datos: any) {
-    return this.http.post(`${this.url}/login.php`, datos);
+  registrarUsuario(data: any) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post('http://localhost/frigosense-api/registro.php', data, { headers });
+  }
+  loginUsuario(data: any) {
+  const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  return this.http.post('http://localhost/frigosense-api/login.php', data, { headers });
   }
 
-  register(datos: any) {
-    return this.http.post(`${this.url}/registro.php`, datos);
-  }
-
-  isAuthenticated(): boolean {
-    return !!localStorage.getItem('usuario');
-  }
-
-  logout() {
-    localStorage.removeItem('usuario');
-  }
 }

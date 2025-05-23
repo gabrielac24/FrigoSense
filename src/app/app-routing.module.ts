@@ -10,13 +10,14 @@ import { ComparaComponent } from './pages/compara/compara.component';
 import { NutricionComponent } from './pages/nutricion/nutricion.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' }, 
   { path: 'inicio', component: InicioComponent},
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'acerca', component: AcercaComponent },
   { path: 'acerca2', component: AcercaComponent },
   { path: 'weather', component: WeatherComponent },

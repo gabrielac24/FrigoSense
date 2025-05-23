@@ -3709,7 +3709,17 @@ textarea.form-control-lg {
   flex: 1 1 auto;
   text-align: center;
 }
-
+html, body {
+margin: 0;
+padding: 0;
+background: radial-gradient(circle at 20% 30%, #fddc04 0%, transparent 60%),
+radial-gradient(circle at 90% 80%, #ff4f81 0%, transparent 60%),
+linear-gradient(135deg, #f94c66, #faae42);
+background-blend-mode: screen;
+min-height: 100vh;
+font-family: 'Helvetica Neue', sans-serif;
+color: white;
+}
 .nav-justified > .nav-link,
 .nav-justified .nav-item {
   flex-basis: 0;

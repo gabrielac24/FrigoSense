@@ -1,0 +1,6 @@
+<!-- Solo muestra el nav si mostrarNav es verdadero -->
+<app-header *ngIf="mostrarNav"></app-header>
+
+<router-outlet></router-outlet>
+
+<app-footer *ngIf="mostrarNav"></app-footer>
