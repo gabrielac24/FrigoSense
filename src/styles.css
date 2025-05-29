@@ -3712,9 +3712,7 @@ textarea.form-control-lg {
 html, body {
 margin: 0;
 padding: 0;
-background: radial-gradient(circle at 20% 30%, #fddc04 0%, transparent 60%),
-radial-gradient(circle at 90% 80%, #ff4f81 0%, transparent 60%),
-linear-gradient(135deg, #f94c66, #faae42);
+background-color: white;
 background-blend-mode: screen;
 min-height: 100vh;
 font-family: 'Helvetica Neue', sans-serif;
@@ -10946,7 +10944,8 @@ p {
   }
   #mainNav.navbar-shrink .navbar-brand svg,
   #mainNav.navbar-shrink .navbar-brand img {
-    height: 1.5rem;
+    height: 3rem; /* o ajusta a 2.5rem o 3.5rem según se necesite */
+    transition: height 0.3s ease;
   }
   #mainNav .navbar-nav .nav-item {
     margin-right: 1rem;
@@ -11381,8 +11380,8 @@ span {
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004085;
+  background-color: #0f5132;
+  border-color: #0f5132;
 }
 
 .card {
@@ -11397,4 +11396,13 @@ span {
 .text-muted {
   font-size: 0.95rem;
   color: #6c757d !important;
+}
+
+.tool-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display: inline-block;
 }

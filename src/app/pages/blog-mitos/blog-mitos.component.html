@@ -1,0 +1,58 @@
+<div class="blog-container">
+  <header class="blog-header">
+    <h1>Verdades y Mitos <span class="green-text">Sobre Pérdida de Peso</span></h1>
+    <p class="subtitle">Descubre la ciencia detrás de los mitos más comunes sobre dietas y ejercicio</p>
+  </header>
+
+  <div class="blog-content">
+    <!-- Artículo destacado -->
+    <article class="featured-post">
+      <div class="post-header">
+        <span class="post-category green-bg">{{featuredArticle.category}}</span>
+        <h2>{{featuredArticle.title}}</h2>
+        <div class="post-meta">
+          <span>{{featuredArticle.date}}</span>
+          <span>•</span>
+          <span>{{featuredArticle.readTime}}</span>
+        </div>
+      </div>
+      <img [src]="featuredArticle.image" [alt]="featuredArticle.title" class="post-image">
+      <div class="post-content">
+        <p>{{featuredArticle.excerpt}}</p>
+        
+        <div class="myth-truth">
+          <div class="myth">
+            <h4>Mito</h4>
+            <p>"{{featuredArticle.myth}}"</p>
+          </div>
+          <div class="truth">
+            <h4>Verdad</h4>
+            <p>{{featuredArticle.truth}}</p>
+          </div>
+        </div>
+        
+        <a href="#" class="read-more">Leer artículo completo →</a>
+      </div>
+    </article>
+
+    <!-- Lista de artículos -->
+    <div class="articles-grid">
+      <article class="blog-post" *ngFor="let article of articles">
+        <div class="post-header">
+          <span class="post-category green-bg">{{article.category}}</span>
+          <h3>{{article.title}}</h3>
+          <div class="post-meta">
+            <span>{{article.date}}</span>
+            <span>•</span>
+            <span>{{article.readTime}}</span>
+          </div>
+        </div>
+        <img [src]="article.image" [alt]="article.title" class="post-image">
+        <div class="post-excerpt">
+          <p>{{article.excerpt}}</p>
+          <a href="#" class="read-more">Leer más →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

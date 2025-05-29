@@ -4,9 +4,7 @@ font-family: 'Helvetica Neue', sans-serif;
 min-width: 100vh;
 min-height: 100vh;
 top: 0;
-background: radial-gradient(circle at 20% 30%, #fddc04 0%, transparent 60%),
-radial-gradient(circle at 90% 80%, #ff4f81 0%, transparent 60%),
-linear-gradient(135deg, #f94c66, #faae42);
+background-color: white;
 background-blend-mode: screen;
 color: white;
 }

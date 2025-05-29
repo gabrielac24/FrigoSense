@@ -19,4 +19,8 @@ export class HeaderComponent {
     localStorage.removeItem('usuario');
     this.router.navigate(['/login']);
   }
+
+  blogMitos() {
+    this.router.navigate(['/blog-mitos']);
+  }
 }

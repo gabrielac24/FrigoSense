@@ -1,0 +1,32 @@
+<div class="conversor-container">
+  <h2>Conversor de Unidades de Cocina</h2>
+  <div class="formulario">
+    <input type="number" [(ngModel)]="valor" placeholder="Cantidad" />
+    <select [(ngModel)]="unidadOrigen">
+      <option value="tsp">Cucharadita (tsp)</option>
+      <option value="tbsp">Cucharada (tbsp)</option>
+      <option value="cup">Taza (cup)</option>
+      <option value="ml">Mililitros (ml)</option>
+      <option value="g">Gramos (g)</option>
+      <option value="oz">Onzas (oz)</option>
+      <option value="l">Litros (l)</option>
+    </select>
+
+    <span>→</span>
+
+    <select [(ngModel)]="unidadDestino">
+      <option value="tsp">Cucharadita (tsp)</option>
+      <option value="tbsp">Cucharada (tbsp)</option>
+      <option value="cup">Taza (cup)</option>
+      <option value="ml">Mililitros (ml)</option>
+      <option value="g">Gramos (g)</option>
+      <option value="oz">Onzas (oz)</option>
+      <option value="l">Litros (l)</option>
+    </select>
+    <button (click)="convertir()">Convertir</button>
+  </div>
+
+  <p class="resultado" *ngIf="resultado !== null">
+    Resultado: {{ resultado | number:'1.2-2' }} {{ unidadDestino }}
+  </p>
+</div>
