@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,20 +7,42 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
-  
+export class HeaderComponent implements OnInit {
+
+  nombreUsuario: string | null = null;
+  mostrarMenuUsuario: boolean = false;
+
   constructor(private router: Router) {}
 
-  irALogin() {
-    // this.router.navigate(['/login'], { state: {dato: "DESARROLLO DE APLICACIONES WEB"} });
-    this.router.navigate(['/login'], { state: {dato: "<h1>HOLA MUNDO</h1>"} });
+  ngOnInit() {
+    const usuario = localStorage.getItem('usuario');
+    this.nombreUsuario = usuario ? JSON.parse(usuario).nombre : null;
   }
+
+  irALogin() {
+    this.router.navigate(['/login'], { state: { dato: "<h1>HOLA MUNDO</h1>" } });
+  }
+
   cerrarSesion() {
     localStorage.removeItem('usuario');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/inicio']);
+    this.mostrarMenuUsuario = false;
   }
 
   blogMitos() {
     this.router.navigate(['/blog-mitos']);
+  }
+
+  toggleMenuUsuario() {
+    this.mostrarMenuUsuario = !this.mostrarMenuUsuario;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    const clickedInsideMenu = target.closest('.user-menu');
+    if (!clickedInsideMenu) {
+      this.mostrarMenuUsuario = false;
+    }
   }
 }

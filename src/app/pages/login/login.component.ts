@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   formularioLogin: FormGroup;
-  mensaje: string = '';
+  mensaje: string = ''
+  verPassword: boolean = false;;
 
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
     this.formularioLogin = this.fb.group({
@@ -24,7 +25,7 @@ export class LoginComponent {
       this.formularioLogin.markAllAsTouched();
       return;
     }
-
+    
     const datos = this.formularioLogin.value;
 
     this.auth.loginUsuario(datos).subscribe({
@@ -42,5 +43,8 @@ export class LoginComponent {
       this.mensaje = 'No se pudo conectar al servidor';
     }
     });
+  }
+  togglePassword() {
+    this.verPassword = !this.verPassword;
   }
 }

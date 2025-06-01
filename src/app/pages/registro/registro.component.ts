@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class RegistroComponent {
   formularioValidacion: FormGroup;
   mensaje: string = '';
+  verPassword: boolean = false;
+  verRePassword: boolean = false;
 
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
     this.formularioValidacion = this.fb.group({
@@ -48,5 +50,13 @@ export class RegistroComponent {
         this.mensaje = res.mensaje || 'No se pudo registrar';
       }
     });
+  }
+
+  togglePassword(campo: string) {
+    if (campo === 'password') {
+      this.verPassword = !this.verPassword;
+    } else if (campo === 'rePassword') {
+      this.verRePassword = !this.verRePassword;
+    }
   }
 }

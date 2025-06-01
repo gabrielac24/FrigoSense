@@ -36,7 +36,6 @@ import { BlogMitosComponent } from './pages/blog-mitos/blog-mitos.component';
     ComparaComponent, 
     NutricionComponent,
     ImcCalculatorComponent,
-    RecetasComponent,
     ConversorComponent,
     BlogMitosComponent,
     RegistroComponent
@@ -47,7 +46,8 @@ import { BlogMitosComponent } from './pages/blog-mitos/blog-mitos.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecetasComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,9 +11,14 @@ export class AuthService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post('http://localhost/frigosense-api/registro.php', data, { headers });
   }
+  
   loginUsuario(data: any) {
   const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   return this.http.post('http://localhost/frigosense-api/login.php', data, { headers });
   }
-
+  
+  contacto(data: any) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post('http://localhost/frigosense-api/contacto.php', data, { headers });
+  }
 }

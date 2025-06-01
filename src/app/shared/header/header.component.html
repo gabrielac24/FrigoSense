@@ -1,30 +1,50 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <div>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-          <a class="navbar-brand" href="#page-top"><img src="../../../assets/img/logos/logo2.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              Menú
-              <i class="fas fa-bars ms-1"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                  <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#herramientas">Herramientas</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
-                  <li class="nav-item"><a class="nav-link" href="" (click)="blogMitos()">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
-                  <button class="nav-link" (click)="cerrarSesion()">Cerrar Sesión</button>
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/home']">
+        <img src="../../../assets/img/logos/logo2.png" alt=""/>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menú
+        <i class="fas fa-bars ms-1"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#herramientas">Herramientas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" (click)="blogMitos()">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
 
-              </ul>
-          </div>
+          <!-- Menú desplegable del usuario -->
+          <li class="nav-item dropdown user-dropdown" (mouseenter)="mostrarMenuUsuario = true" (mouseleave)="mostrarMenuUsuario = false">
+            <a class="nav-link dropdown-toggle user-toggle" href="#" role="button">
+                <i class="fas fa-user"></i> {{ nombreUsuario }}
+            </a>
+            <div class="user-menu" *ngIf="mostrarMenuUsuario">
+                <p class="user-name"><i class="fas fa-user-circle"></i> {{ nombreUsuario }}</p>
+                <hr>
+                <a class="dropdown-item" href="#"><i class="fas fa-user-edit"></i> Editar cuenta</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-bookmark"></i> Blogs guardados</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-history"></i> Historial de herramientas</a>
+                <a class="dropdown-item cerrar-sesion" (click)="cerrarSesion()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+            </div>
+        </li>
+
+        </ul>
       </div>
+    </div>
   </nav>
-  <!-- Masthead-->
+
+  <!-- Masthead -->
   <header class="masthead">
-      <div class="container">
-          <div class="masthead-subheading">Protege tus alimentos con monitoreo inteligente</div>
-          <div class="masthead-heading text-uppercase">FrigoSense</div>
-          <a class="btn btn-primary btn-xl text-uppercase" href="#services">Más</a>
-      </div>
+    <div class="container">
+      <div class="masthead-subheading">Protege tus alimentos con monitoreo inteligente</div>
+      <div class="masthead-heading text-uppercase">FrigoSense</div>
+      <a class="btn btn-primary btn-xl text-uppercase" href="#services">Más</a>
+    </div>
   </header>
 </div>
