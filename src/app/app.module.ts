@@ -38,7 +38,8 @@ import { BlogMitosComponent } from './pages/blog-mitos/blog-mitos.component';
     ImcCalculatorComponent,
     ConversorComponent,
     BlogMitosComponent,
-    RegistroComponent
+    RegistroComponent,
+    RecetasComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +48,7 @@ import { BlogMitosComponent } from './pages/blog-mitos/blog-mitos.component';
     FormsModule,
     HttpClientModule, 
     ReactiveFormsModule,
-    RecetasComponent
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

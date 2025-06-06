@@ -1,50 +1,41 @@
 <div class="recetas-container">
-  <h1 class="titulo-principal">Recetario Gourmet</h1>
-  <p class="subtitulo">Descubre deliciosas recetas para todos los gustos</p>
-  
-  <div class="recetas-grid">
-    <div *ngFor="let receta of recetas" class="receta-card" [class.expandida]="receta.expandida">
-      <div class="receta-header" (click)="toggleExpandir(receta)">
-        <img [src]="receta.imagen" alt="{{ receta.nombre }}" class="receta-imagen">
-        <h2 class="receta-nombre">{{ receta.nombre }}</h2>
-        <span class="toggle-icon">{{ receta.expandida ? '−' : '+' }}</span>
+  <h1 class="titulo">Recetario Saludable</h1>
+
+  <div class="receta-card" *ngFor="let receta of recetas; let i = index">
+    <div class="encabezado" (click)="toggleReceta(i)">
+      <img [src]="receta.imagen" alt="{{ receta.nombre }}" />
+      <div>
+        <h2>{{ receta.nombre }}</h2>
+        <p>{{ receta.descripcion }}</p>
       </div>
-      
-      <div class="receta-detalle" *ngIf="receta.expandida">
-        <p class="receta-descripcion">{{ receta.descripcion }}</p>
-        
-        <div class="receta-info">
-          <div>
-            <h3>Información básica</h3>
-            <p><strong>Tiempo de preparación:</strong> {{ receta.tiempoPreparacion }}</p>
-            <p><strong>Porciones:</strong> {{ receta.porciones }}</p>
-          </div>
-          
-          <div class="nutricion-box">
-            <h3>Información nutrimental</h3>
-            <p><strong>Calorías:</strong> {{ receta.informacionNutricional.calorias }} kcal</p>
-            <p><strong>Proteínas:</strong> {{ receta.informacionNutricional.proteinas }}</p>
-            <p><strong>Carbohidratos:</strong> {{ receta.informacionNutricional.carbohidratos }}</p>
-            <p><strong>Grasas:</strong> {{ receta.informacionNutricional.grasas }}</p>
-            <p *ngIf="receta.informacionNutricional.fibra"><strong>Fibra:</strong> {{ receta.informacionNutricional.fibra }}</p>
-          </div>
-        </div>
-        
-        <div class="ingredientes-instrucciones">
-          <div class="ingredientes">
-            <h3>Ingredientes</h3>
-            <ul>
-              <li *ngFor="let ingrediente of receta.ingredientes">{{ ingrediente }}</li>
-            </ul>
-          </div>
-          
-          <div class="instrucciones">
-            <h3>Instrucciones</h3>
-            <ol>
-              <li *ngFor="let instruccion of receta.instrucciones">{{ instruccion }}</li>
-            </ol>
-          </div>
-        </div>
+      <button class="btn-toggle">{{ receta.expandida ? '▲' : '▼' }}</button>
+    </div>
+
+    <div class="contenido" *ngIf="receta.expandida">
+      <h3>📝 Ingredientes:</h3>
+      <ul>
+        <li *ngFor="let ingrediente of receta.ingredientes">{{ ingrediente }}</li>
+      </ul>
+
+      <h3>👨‍🍳 Pasos:</h3>
+      <ol>
+        <li *ngFor="let paso of receta.pasos">{{ paso }}</li>
+      </ol>
+
+      <div class="detalle">
+        <p><strong>⏱ Tiempo de preparación:</strong> {{ receta.tiempoPreparacion }}</p>
+        <p><strong>🍽 Porciones:</strong> {{ receta.porciones }}</p>
+      </div>
+
+      <div class="nutricion">
+        <h3>💪 Información Nutrimental (por porción):</h3>
+        <ul>
+          <li>Calorías: {{ receta.informacionNutrimental.calorias }}</li>
+          <li>Proteínas: {{ receta.informacionNutrimental.proteinas }}</li>
+          <li>Grasas: {{ receta.informacionNutrimental.grasas }}</li>
+          <li>Carbohidratos: {{ receta.informacionNutrimental.carbohidratos }}</li>
+          <li>Fibra: {{ receta.informacionNutrimental.fibra }}</li>
+        </ul>
       </div>
     </div>
   </div>

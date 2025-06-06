@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   nombreUsuario: string | null = null;
   mostrarMenuUsuario: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private scroller: ViewportScroller) {}
 
   ngOnInit() {
     const usuario = localStorage.getItem('usuario');
@@ -35,6 +36,18 @@ export class HeaderComponent implements OnInit {
 
   toggleMenuUsuario() {
     this.mostrarMenuUsuario = !this.mostrarMenuUsuario;
+  }
+
+  irASeccion(id: string) {
+    if (this.router.url !== '/home') {
+      this.router.navigate(['/home']).then(() => {
+        setTimeout(() => {
+          this.scroller.scrollToAnchor(id);
+        }, 100);
+      });
+    } else {
+      this.scroller.scrollToAnchor(id);
+    }
   }
 
   @HostListener('document:click', ['$event'])

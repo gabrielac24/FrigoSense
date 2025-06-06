@@ -13,11 +13,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#herramientas">Herramientas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" (click)="blogMitos()">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
+          <li class="nav-item">
+  <a class="nav-link" (click)="irASeccion('services')">Servicios</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="irASeccion('herramientas')">Herramientas</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="irASeccion('portfolio')">Portafolio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" (click)="blogMitos()">Blog</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="irASeccion('team')">Equipo</a>
+    </li>
+
 
           <!-- Menú desplegable del usuario -->
           <li class="nav-item dropdown user-dropdown" (mouseenter)="mostrarMenuUsuario = true" (mouseleave)="mostrarMenuUsuario = false">
