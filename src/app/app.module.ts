@@ -20,6 +20,7 @@ import { ImcCalculatorComponent } from './pages/imc-calculator/imc-calculator.co
 import { RecetasComponent } from './pages/recetas/recetas.component';
 import { ConversorComponent } from './pages/conversor/conversor.component';
 import { BlogMitosComponent } from './pages/blog-mitos/blog-mitos.component';
+import { ArticuloDetalleComponent } from './pages/articulo-detalle/articulo-detalle.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { BlogMitosComponent } from './pages/blog-mitos/blog-mitos.component';
     ConversorComponent,
     BlogMitosComponent,
     RegistroComponent,
-    RecetasComponent
+    RecetasComponent,
+    ArticuloDetalleComponent,
   ],
   imports: [
     CommonModule,

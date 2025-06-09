@@ -15,6 +15,7 @@ import { RecetasComponent } from './pages/recetas/recetas.component';
 import { ImcCalculatorComponent } from './pages/imc-calculator/imc-calculator.component';
 import { ConversorComponent } from './pages/conversor/conversor.component';
 import { BlogMitosComponent } from './pages/blog-mitos/blog-mitos.component';
+import { ArticuloDetalleComponent } from './pages/articulo-detalle/articulo-detalle.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' }, 
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'imc-calculator', component: ImcCalculatorComponent},
   { path: 'conversor', component: ConversorComponent},
   { path: 'blog-mitos', component: BlogMitosComponent},
+  { path: 'blog/articulo/:id', component: ArticuloDetalleComponent },
   { path: 'compara', component: ComparaComponent},
   { path: '**', component: NotFoundComponent },
 ]
@@ -51,3 +53,4 @@ const config: ExtraOptions = {
   ]
 })
 export class AppRoutingModule { }
+

@@ -1,0 +1,31 @@
+<div class="article-container" *ngIf="article">
+  <header class="article-header">
+    <span class="category">{{ article.category }}</span>
+    <h1>{{ article.title }}</h1>
+    <div class="meta">
+      <span>{{ article.date }}</span>
+      <span>•</span>
+      <span>{{ article.readTime }}</span>
+    </div>
+  </header>
+
+  <img [src]="article.image" [alt]="article.title" class="article-image">
+
+  <section class="article-body">
+    <p>{{ article.excerpt }}</p>
+
+    <div class="myth-truth">
+      <div class="myth">
+        <h3>Mito</h3>
+        <p>"{{ article.myth }}"</p>
+      </div>
+      <div class="truth">
+        <h3>Verdad</h3>
+        <p>{{ article.truth }}</p>
+      </div>
+    </div>
+
+    <div class="article-content" [innerHTML]="safeContent"></div>
+  
+  </section>
+</div>
