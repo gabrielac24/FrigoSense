@@ -107,3 +107,9 @@
     }
   }
   
+  .food-image {
+  border-radius: 12px;
+  margin: 10px 0;
+  max-width: 100%;
+  height: auto;
+}

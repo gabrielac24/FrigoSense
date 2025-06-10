@@ -1,39 +1,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<div class="container">
-    <h2>Consulta Nutricional</h2>
-    
-    <!-- Campo de entrada para los ingredientes -->
-    <input type="text" #inputIngredientes placeholder="Escribe los ingredientes" class="input-field">
-    <button (click)="buscarNutricion(inputIngredientes.value)" class="search-button">Buscar</button>
-  
-    <!-- Mostrar mensaje de error si no hay datos -->
-    <div *ngIf="errorMensaje" class="error-message">
-      {{ errorMensaje }}
-    </div>
-  
-    <!-- Mostrar los resultados si los hay -->
-    <div *ngIf="datosNutricionales.length > 0">
-      <h3>Resultados</h3>
-      <ul class="result-list">
-        <li *ngFor="let item of datosNutricionales" class="result-item">
-          <strong>{{ item.name }}</strong>: 
-          <span><i class="fas fa-bacon"></i> Grasa Total: <strong>{{ item.fat_total_g }}g</strong></span>
-          <br>
-          <span><i class="fas fa-exclamation-circle"></i> Grasa Saturada: <strong>{{ item.fat_saturated_g }}g</strong></span>
-          <br>
-          <span><i class="fas fa-salt"></i> Sodio: <strong>{{ item.sodium_mg }}mg</strong></span>
-          <br>
-          <span><i class="fas fa-lemon"></i> Potasio: <strong>{{ item.potassium_mg }}mg</strong></span>
-          <br>
-          <span><i class="fas fa-heartbeat"></i> Colesterol: <strong>{{ item.cholesterol_mg }}mg</strong></span>
-          <br>
-          <span><i class="fas fa-bread-slice"></i> Carbohidratos: <strong>{{ item.carbohydrates_total_g }}g</strong></span>
-          <br>
-          <span><i class="fas fa-seedling"></i> Fibra: <strong>{{ item.fiber_g }}g</strong></span>
-          <br>
-          <span><i class="fas fa-candy-cane"></i> Azúcares: <strong>{{ item.sugar_g }}g</strong></span>
 
-        </li>
-      </ul>
-    </div>
+<div class="container">
+  <h2>Consulta Nutricional</h2>
+
+  <input type="text" #inputIngredientes placeholder="Escribe los ingredientes" class="input-field">
+  <button (click)="buscarNutricion(inputIngredientes.value)" class="search-button">Buscar</button>
+
+  <div *ngIf="errorMensaje" class="error-message">
+    {{ errorMensaje }}
+  </div>
+
+  <div *ngIf="datosNutricionales.length > 0">
+    <h3>Resultados</h3>
+    <ul class="result-list">
+      <li *ngFor="let item of datosNutricionales" class="result-item">
+        <strong>{{ item.name }}</strong><br>
+        <img *ngIf="imagenes[item.name]" [src]="imagenes[item.name]" [alt]="item.name" width="150" class="food-image"><br>
+
+        <span><i class="fas fa-bacon"></i> Grasa Total: <strong>{{ item.fat_total_g }}g</strong></span><br>
+        <span><i class="fas fa-exclamation-circle"></i> Grasa Saturada: <strong>{{ item.fat_saturated_g }}g</strong></span><br>
+        <span><i class="fas fa-salt"></i> Sodio: <strong>{{ item.sodium_mg }}mg</strong></span><br>
+        <span><i class="fas fa-lemon"></i> Potasio: <strong>{{ item.potassium_mg }}mg</strong></span><br>
+        <span><i class="fas fa-heartbeat"></i> Colesterol: <strong>{{ item.cholesterol_mg }}mg</strong></span><br>
+        <span><i class="fas fa-bread-slice"></i> Carbohidratos: <strong>{{ item.carbohydrates_total_g }}g</strong></span><br>
+        <span><i class="fas fa-seedling"></i> Fibra: <strong>{{ item.fiber_g }}g</strong></span><br>
+        <span><i class="fas fa-candy-cane"></i> Azúcares: <strong>{{ item.sugar_g }}g</strong></span>
+      </li>
+    </ul>
+  </div>
 </div>
