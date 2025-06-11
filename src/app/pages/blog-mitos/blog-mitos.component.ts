@@ -1,7 +1,7 @@
+// blog-mitos.component.ts
 import { Component } from '@angular/core';
 import { ArticulosService } from '../../services/articulos.service';
 import { Article } from '../../models/articulo.model';
-import { ArticuloDetalleComponent } from '../articulo-detalle/articulo-detalle.component';
 
 @Component({
   selector: 'app-blog-mitos',
@@ -9,11 +9,19 @@ import { ArticuloDetalleComponent } from '../articulo-detalle/articulo-detalle.c
   styleUrls: ['./blog-mitos.component.css']
 })
 export class BlogMitosComponent {
-  articles: Article[] = [];
-  featuredArticle: Article | undefined;
+  featuredArticle: Article;
+  nutritionArticles: Article[] = [];
+  exerciseArticles: Article[] = [];
+  dietArticles: Article[] = [];
 
   constructor(private articulosService: ArticulosService) {
-    this.articles = this.articulosService.getArticles();
-    this.featuredArticle = this.articles[0];
+    const allArticles = this.articulosService.getArticles();
+    this.featuredArticle = allArticles[0]; // Primer artículo como destacado
+    
+    // Filtramos los artículos por categoría, excluyendo el destacado
+    this.nutritionArticles = this.articulosService.getArticlesByCategory('Nutrición')
+      .filter(a => a.id !== this.featuredArticle.id);
+    this.exerciseArticles = this.articulosService.getArticlesByCategory('Ejercicio');
+    this.dietArticles = this.articulosService.getArticlesByCategory('Dietas');
   }
 }

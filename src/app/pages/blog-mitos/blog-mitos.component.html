@@ -1,3 +1,4 @@
+<!-- blog-mitos.component.html -->
 <div class="blog-container">
   <header class="blog-header">
     <h1>Verdades y Mitos <span class="green-text">Sobre Pérdida de Peso</span></h1>
@@ -5,54 +6,109 @@
   </header>
 
   <div class="blog-content">
-    <!-- Artículo destacado -->
-    <article class="featured-post">
-      <div class="post-header">
-        <span class="post-category green-bg">{{featuredArticle?.category}}</span>
-        <h2>{{featuredArticle?.title}}</h2>
-        <div class="post-meta">
-          <span>{{featuredArticle?.date}}</span>
-          <span>•</span>
-          <span>{{featuredArticle?.readTime}}</span>
-        </div>
-      </div>
-      <img [src]="featuredArticle?.image" [alt]="featuredArticle?.title" class="post-image">
-      <div class="post-content">
-        <p>{{featuredArticle?.excerpt}}</p>
-        
-        <div class="myth-truth">
-          <div class="myth">
-            <h4>Mito</h4>
-            <p>"{{featuredArticle?.myth}}"</p>
-          </div>
-          <div class="truth">
-            <h4>Verdad</h4>
-            <p>{{featuredArticle?.truth}}</p>
-          </div>
-        </div>
-        
-        <a [routerLink]="['/blog/articulo', featuredArticle?.id]" class="read-more">Leer artículo completo →</a>
-      </div>
-    </article>
-
-    <!-- Lista de artículos -->
-    <div class="articles-grid">
-      <article class="blog-post" *ngFor="let article of articles">
+    <!-- Artículo destacado - BLOG DEL DÍA -->
+    <section class="featured-section">
+      <h2 class="section-title">Blog del Día</h2>
+      <article class="featured-post">
         <div class="post-header">
-          <span class="post-category green-bg">{{article?.category}}</span>
-          <h3>{{article?.title}}</h3>
+          <span class="post-category green-bg">{{featuredArticle.category}}</span>
+          <h2>{{featuredArticle.title}}</h2>
           <div class="post-meta">
-            <span>{{article?.date}}</span>
+            <span>{{featuredArticle.date}}</span>
             <span>•</span>
-            <span>{{article?.readTime}}</span>
+            <span>{{featuredArticle.readTime}}</span>
           </div>
         </div>
-        <img [src]="article?.image" [alt]="article.title" class="post-image">
-        <div class="post-excerpt">
-          <p>{{article?.excerpt}}</p>
-          <a [routerLink]="['/blog/articulo', article.id]" class="read-more">Leer más →</a>
+        <img [src]="featuredArticle.image" [alt]="featuredArticle.title" class="post-image">
+        <div class="post-content">
+          <p>{{featuredArticle.excerpt}}</p>
+          
+          <div class="myth-truth">
+            <div class="myth">
+              <h4>Mito</h4>
+              <p>"{{featuredArticle.myth}}"</p>
+            </div>
+            <div class="truth">
+              <h4>Verdad</h4>
+              <p>{{featuredArticle.truth}}</p>
+            </div>
+          </div>
+          
+          <a [routerLink]="['/blog/articulo', featuredArticle.id]" class="read-more">Leer artículo completo →</a>
         </div>
       </article>
+    </section>
+
+    <!-- Columnas por categoría -->
+    <div class="categories-grid">
+      <!-- Columna Nutrición -->
+      <section class="category-column">
+        <h2 class="section-title">Nutrición</h2>
+        <div class="articles-grid">
+          <article class="blog-post" *ngFor="let article of nutritionArticles">
+            <div class="post-header">
+              <span class="post-category green-bg">{{article.category}}</span>
+              <h3>{{article.title}}</h3>
+              <div class="post-meta">
+                <span>{{article.date}}</span>
+                <span>•</span>
+                <span>{{article.readTime}}</span>
+              </div>
+            </div>
+            <img [src]="article.image" [alt]="article.title" class="post-image">
+            <div class="post-excerpt">
+              <p>{{article.excerpt}}</p>
+              <a [routerLink]="['/blog/articulo', article.id]" class="read-more">Leer más →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Columna Ejercicio -->
+      <section class="category-column">
+        <h2 class="section-title">Ejercicio</h2>
+        <div class="articles-grid">
+          <article class="blog-post" *ngFor="let article of exerciseArticles">
+            <div class="post-header">
+              <span class="post-category green-bg">{{article.category}}</span>
+              <h3>{{article.title}}</h3>
+              <div class="post-meta">
+                <span>{{article.date}}</span>
+                <span>•</span>
+                <span>{{article.readTime}}</span>
+              </div>
+            </div>
+            <img [src]="article.image" [alt]="article.title" class="post-image">
+            <div class="post-excerpt">
+              <p>{{article.excerpt}}</p>
+              <a [routerLink]="['/blog/articulo', article.id]" class="read-more">Leer más →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Columna Dietas -->
+      <section class="category-column">
+        <h2 class="section-title">Dietas</h2>
+        <div class="articles-grid">
+          <article class="blog-post" *ngFor="let article of dietArticles">
+            <div class="post-header">
+              <span class="post-category green-bg">{{article.category}}</span>
+              <h3>{{article.title}}</h3>
+              <div class="post-meta">
+                <span>{{article.date}}</span>
+                <span>•</span>
+                <span>{{article.readTime}}</span>
+              </div>
+            </div>
+            <img [src]="article.image" [alt]="article.title" class="post-image">
+            <div class="post-excerpt">
+              <p>{{article.excerpt}}</p>
+              <a [routerLink]="['/blog/articulo', article.id]" class="read-more">Leer más →</a>
+            </div>
+          </article>
+        </div>
+      </section>
     </div>
   </div>
 </div>

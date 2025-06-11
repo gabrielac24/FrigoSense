@@ -1,41 +1,57 @@
 <div class="recetas-container">
-  <h1 class="titulo">Recetario Saludable</h1>
-
-  <div class="receta-card" *ngFor="let receta of recetas; let i = index">
-    <div class="encabezado" (click)="toggleReceta(i)">
-      <img [src]="receta.imagen" alt="{{ receta.nombre }}" />
-      <div>
-        <h2>{{ receta.nombre }}</h2>
+  <h1>Recetas Saludables</h1>
+  
+  <div *ngFor="let categoria of categorias" class="categoria-section">
+    <h2>{{ categoria }}</h2>
+    <div class="recetas-grid">
+      <div *ngFor="let receta of getRecetasPorCategoria(categoria)" class="receta-card" (click)="seleccionarReceta(receta)">
+        <img [src]="receta.imagen" alt="{{ receta.nombre }}" class="receta-imagen">
+        <h3>{{ receta.nombre }}</h3>
         <p>{{ receta.descripcion }}</p>
       </div>
-      <button class="btn-toggle">{{ receta.expandida ? '▲' : '▼' }}</button>
     </div>
+  </div>
 
-    <div class="contenido" *ngIf="receta.expandida">
-      <h3>📝 Ingredientes:</h3>
-      <ul>
-        <li *ngFor="let ingrediente of receta.ingredientes">{{ ingrediente }}</li>
-      </ul>
-
-      <h3>👨‍🍳 Pasos:</h3>
-      <ol>
-        <li *ngFor="let paso of receta.pasos">{{ paso }}</li>
-      </ol>
-
-      <div class="detalle">
-        <p><strong>⏱ Tiempo de preparación:</strong> {{ receta.tiempoPreparacion }}</p>
-        <p><strong>🍽 Porciones:</strong> {{ receta.porciones }}</p>
+  <!-- Ventana de detalle -->
+  <div *ngIf="recetaSeleccionada" class="fondo-oscuro" (click)="cerrarDetalle($event)">
+    <div class="receta-detalle" (click)="$event.stopPropagation()">
+      <button class="cerrar-detalle" (click)="cerrarDetalle($event)" aria-label="Cerrar">
+        &times;
+      </button>
+      
+      <div class="receta-header">
+        <h2>{{ recetaSeleccionada.nombre }}</h2>
+        <img [src]="recetaSeleccionada.imagen" alt="{{ recetaSeleccionada.nombre }}" class="imagen-receta">
+        <p class="receta-descripcion">{{ recetaSeleccionada.descripcion }}</p>
       </div>
-
-      <div class="nutricion">
-        <h3>💪 Información Nutrimental (por porción):</h3>
+      
+      <div class="receta-meta">
+        <span><strong>⏱️ Tiempo:</strong> {{ recetaSeleccionada.tiempoPreparacion }}</span>
+        <span><strong>🍽️ Porciones:</strong> {{ recetaSeleccionada.porciones }}</span>
+      </div>
+      
+      <div class="receta-seccion">
+        <h3>🥗 Ingredientes</h3>
         <ul>
-          <li>Calorías: {{ receta.informacionNutrimental.calorias }}</li>
-          <li>Proteínas: {{ receta.informacionNutrimental.proteinas }}</li>
-          <li>Grasas: {{ receta.informacionNutrimental.grasas }}</li>
-          <li>Carbohidratos: {{ receta.informacionNutrimental.carbohidratos }}</li>
-          <li>Fibra: {{ receta.informacionNutrimental.fibra }}</li>
+          <li *ngFor="let ingrediente of recetaSeleccionada.ingredientes">{{ ingrediente }}</li>
         </ul>
+      </div>
+      
+      <div class="receta-seccion">
+        <h3>👩‍🍳 Preparación</h3>
+        <ol>
+          <li *ngFor="let paso of recetaSeleccionada.pasos">{{ paso }}</li>
+        </ol>
+      </div>
+      
+      <div class="receta-seccion">
+        <h3>📊 Información Nutrimental</h3>
+        <div class="informacion-nutrimental">
+          <div><strong>Calorías:</strong> {{ recetaSeleccionada.informacionNutrimental.calorias }}</div>
+          <div><strong>Proteínas:</strong> {{ recetaSeleccionada.informacionNutrimental.proteinas }}</div>
+          <div><strong>Grasas:</strong> {{ recetaSeleccionada.informacionNutrimental.grasas }}</div>
+          <div><strong>Carbohidratos:</strong> {{ recetaSeleccionada.informacionNutrimental.carbohidratos }}</div>
+        </div>
       </div>
     </div>
   </div>

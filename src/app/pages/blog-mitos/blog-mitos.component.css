@@ -1,4 +1,4 @@
-/* Estilos base */
+/* blog-mitos.component.css */
 .blog-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -30,12 +30,35 @@
   color: #666;
 }
 
+/* Sección destacada */
+.featured-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #000;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #2ecc71;
+}
+
 /* Artículo destacado */
 .featured-post {
-  margin-bottom: 4rem;
   border: 2px solid #000;
   border-radius: 8px;
   overflow: hidden;
+  margin-bottom: 2rem;
 }
 
 .featured-post .post-header {
@@ -121,18 +144,29 @@
   text-decoration: underline;
 }
 
+/* Grid de categorías */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.category-column {
+  margin-bottom: 2rem;
+}
+
 /* Grid de artículos */
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
 .blog-post {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog-post:hover {
@@ -158,6 +192,12 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .blog-header h1 {
     font-size: 2rem;
@@ -172,7 +212,7 @@
     height: 250px;
   }
   
-  .articles-grid {
+  .categories-grid {
     grid-template-columns: 1fr;
   }
 }
