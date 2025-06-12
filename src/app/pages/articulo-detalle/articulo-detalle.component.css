@@ -64,3 +64,19 @@
   color: #2ecc71;
   font-weight: bold;
 }
+
+.contenedor-img
+{
+  height: 400px;          /* Altura que quieres mostrar */
+  overflow: hidden;       /* Oculta lo que sobrepasa */
+  width: 100%;            /* O un valor fijo si prefieres */
+  position: relative;
+  
+}
+
+.article-image{
+  width: 100%;            /* O auto si no quieres escalar horizontalmente */
+  height: auto;           /* Para mantener proporciones */
+  display: block;
+
+}

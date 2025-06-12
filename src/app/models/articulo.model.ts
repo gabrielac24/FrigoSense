@@ -5,6 +5,7 @@ export interface Article {
   date: string;
   readTime: string;
   image: string;
+  image2: string;
   excerpt: string;
   myth: string;
   truth: string;

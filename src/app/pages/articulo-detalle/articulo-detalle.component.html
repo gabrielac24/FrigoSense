@@ -9,7 +9,10 @@
     </div>
   </header>
 
-  <img [src]="article.image" [alt]="article.title" class="article-image">
+  <div class="contenedor-img">
+    <img [src]="article.image2" [alt]="article.title" class="article-image">
+  </div>
+
 
   <section class="article-body">
     <p>{{ article.excerpt }}</p>
